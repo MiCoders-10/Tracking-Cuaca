@@ -1,5 +1,5 @@
 const iconElement = document.querySelector(".weather-icon");
-const locationIcon = document.querySelector(".location-icon"); // Pastikan class benar
+const locationIcon = document.querySelector(".location-icon"); 
 const tempElement = document.querySelector(".temperature-value p");
 const descElement = document.querySelector(".temperature-description p");
 const locationElement = document.querySelector(".location p");
@@ -13,7 +13,7 @@ let longitude = 0.0;
 input.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
-        city = input.value.trim(); // Hindari spasi kosong
+        city = input.value.trim(); 
         if (city) {
             getSearchWeather(city);
             console.log(city);
@@ -25,7 +25,7 @@ input.addEventListener("keyup", function (event) {
 
 const weather = {
     temperature: {
-        value: null, // Pastikan value didefinisikan sejak awal
+        value: null, 
         unit: "celsius"
     }
 };
@@ -112,7 +112,7 @@ function displayWeather() {
         tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
         descElement.innerHTML = weather.description;
         locationElement.innerHTML = `${weather.city}, ${weather.country}`;
-        notificationElement.style.display = "none"; // Sembunyikan error jika sukses
+        notificationElement.style.display = "none"; 
     } else {
         showError({ message: "Data cuaca tidak tersedia" });
     }
